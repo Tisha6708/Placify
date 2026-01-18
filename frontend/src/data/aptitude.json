@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "question": "What is 20% of 150?",
+    "options": ["20", "25", "30", "35"],
+    "answer": "30",
+    "topic": "Quant"
+  },
+  {
+    "id": 2,
+    "question": "If 5 workers can complete a job in 10 days, how many days will 10 workers take?",
+    "options": ["2", "5", "10", "20"],
+    "answer": "5",
+    "topic": "Quant"
+  },
+  {
+    "id": 3,
+    "question": "Find the next number: 2, 4, 8, 16, ?",
+    "options": ["18", "24", "32", "30"],
+    "answer": "32",
+    "topic": "Logical"
+  }
+]
