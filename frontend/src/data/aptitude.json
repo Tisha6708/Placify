@@ -1,23 +1,25 @@
 [
-  {
-    "id": 1,
-    "question": "What is 20% of 150?",
-    "options": ["20", "25", "30", "35"],
-    "answer": "30",
-    "topic": "Quant"
-  },
-  {
-    "id": 2,
-    "question": "If 5 workers can complete a job in 10 days, how many days will 10 workers take?",
-    "options": ["2", "5", "10", "20"],
-    "answer": "5",
-    "topic": "Quant"
-  },
-  {
-    "id": 3,
-    "question": "Find the next number: 2, 4, 8, 16, ?",
-    "options": ["18", "24", "32", "30"],
-    "answer": "32",
-    "topic": "Logical"
-  }
+  { "id": 1, "question": "What is 25% of 240?", "options": ["40", "50", "60", "80"], "answer": "60", "topic": "Quant" },
+  { "id": 2, "question": "If CP = 200 and SP = 250, find profit %.", "options": ["20%", "25%", "30%", "15%"], "answer": "25%", "topic": "Quant" },
+  { "id": 3, "question": "A train 120m long runs at 60 km/hr. Time to cross a pole?", "options": ["6 sec", "7.2 sec", "8 sec", "10 sec"], "answer": "7.2 sec", "topic": "Quant" },
+  { "id": 4, "question": "Simple interest on ₹1000 at 10% for 2 years?", "options": ["200", "100", "150", "250"], "answer": "200", "topic": "Quant" },
+  { "id": 5, "question": "Ratio of 2:3 becomes 4:5 after adding x. Find x.", "options": ["1", "2", "3", "4"], "answer": "2", "topic": "Quant" },
+
+  { "id": 6, "question": "Find the odd one out: 3, 5, 11, 14, 17", "options": ["3", "5", "11", "14"], "answer": "14", "topic": "Logical" },
+  { "id": 7, "question": "If CAT = DBU, then DOG = ?", "options": ["EPH", "EOG", "DPH", "FPH"], "answer": "EPH", "topic": "Logical" },
+  { "id": 8, "question": "Which diagram represents relation between men, women, humans?", "options": ["All separate", "Two inside one", "All overlapping", "One inside another"], "answer": "Two inside one", "topic": "Logical" },
+  { "id": 9, "question": "Find next number: 2, 6, 12, 20, ?", "options": ["28", "30", "32", "24"], "answer": "30", "topic": "Logical" },
+  { "id": 10, "question": "Pointing to photo, Ram said: He is son of my father. Who is he?", "options": ["Brother", "Son", "Cousin", "Self"], "answer": "Self", "topic": "Logical" },
+
+  { "id": 11, "question": "Choose correct spelling.", "options": ["Occassion", "Occasion", "Ocasion", "Occesion"], "answer": "Occasion", "topic": "Verbal" },
+  { "id": 12, "question": "Find synonym of 'Rapid'.", "options": ["Slow", "Fast", "Weak", "Lazy"], "answer": "Fast", "topic": "Verbal" },
+  { "id": 13, "question": "Choose correct sentence.", "options": ["He don't like tea", "He doesn't like tea", "He don't likes tea", "He not like tea"], "answer": "He doesn't like tea", "topic": "Verbal" },
+  { "id": 14, "question": "Antonym of 'Expand'.", "options": ["Increase", "Grow", "Shrink", "Rise"], "answer": "Shrink", "topic": "Verbal" },
+  { "id": 15, "question": "Fill blank: She is good ___ mathematics.", "options": ["in", "on", "at", "with"], "answer": "at", "topic": "Verbal" },
+
+  { "id": 16, "question": "A can do work in 10 days, B in 20 days. Together?", "options": ["6.6 days", "7 days", "8 days", "5 days"], "answer": "6.6 days", "topic": "Quant" },
+  { "id": 17, "question": "If x + y = 10 and x - y = 4, find x.", "options": ["6", "7", "8", "5"], "answer": "7", "topic": "Quant" },
+  { "id": 18, "question": "Find missing number: 4, 9, 16, 25, ?", "options": ["30", "35", "36", "49"], "answer": "36", "topic": "Logical" },
+  { "id": 19, "question": "Choose correct word: He is ___ honest man.", "options": ["a", "an", "the", "no article"], "answer": "an", "topic": "Verbal" },
+  { "id": 20, "question": "If 3x = 81, find x.", "options": ["2", "3", "4", "5"], "answer": "4", "topic": "Quant" }
 ]

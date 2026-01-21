@@ -5,14 +5,25 @@ function MockTest() {
   const [started, setStarted] = useState(false);
   const [questions, setQuestions] = useState([]);
   const [current, setCurrent] = useState(0);
-  const [selected, setSelected] = useState(null);
   const [answers, setAnswers] = useState({});
-  const [timeLeft, setTimeLeft] = useState(300); // 5 min
+  const [timeLeft, setTimeLeft] = useState(20 * 60); // 20 min
   const [finished, setFinished] = useState(false);
 
   const startTest = () => {
-    const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-    setQuestions(shuffled.slice(0, 5)); // 5 for now
+    const quant = allQuestions.filter(q => q.topic === "Quant");
+    const logical = allQuestions.filter(q => q.topic === "Logical");
+    const verbal = allQuestions.filter(q => q.topic === "Verbal");
+
+    const pick = (arr, n) =>
+      [...arr].sort(() => 0.5 - Math.random()).slice(0, n);
+
+    const selected = [
+      ...pick(quant, 5),
+      ...pick(logical, 5),
+      ...pick(verbal, 5)
+    ].sort(() => 0.5 - Math.random());
+
+    setQuestions(selected);
     setStarted(true);
   };
 
@@ -44,7 +55,10 @@ function MockTest() {
     return (
       <div className="p-8 text-center">
         <h1 className="text-2xl font-bold mb-4">Mock Test</h1>
-        <p className="mb-6">5 questions • 5 minutes</p>
+        <p className="mb-2">15 questions • 20 minutes</p>
+        <p className="text-sm text-gray-500 mb-6">
+          Quant: 5 • Logical: 5 • Verbal: 5
+        </p>
 
         <button
           onClick={startTest}
@@ -62,18 +76,47 @@ function MockTest() {
     ).length;
 
     return (
-      <div className="p-8 text-center">
-        <h1 className="text-2xl font-bold mb-4">Test Completed</h1>
-        <p className="text-xl mb-4">
+      <div className="p-8 max-w-2xl mx-auto">
+        <h1 className="text-2xl font-bold mb-4 text-center">Test Completed</h1>
+
+        <p className="text-xl mb-6 text-center">
           Score: {score} / {questions.length}
         </p>
 
-        <button
-          onClick={() => window.location.reload()}
-          className="px-5 py-2 bg-green-600 text-white rounded"
-        >
-          Try Again
-        </button>
+        {/* REVIEW */}
+        <div className="text-left mb-8">
+          <h3 className="font-semibold mb-3">Review Answers</h3>
+
+          {questions.map((q, i) => (
+            <div key={q.id} className="mb-3 text-sm">
+              <p className="font-medium">
+                Q{i + 1}. {q.question}
+              </p>
+              <p>
+                Your answer:{" "}
+                <span
+                  className={
+                    answers[q.id] === q.answer
+                      ? "text-green-600"
+                      : "text-red-600"
+                  }
+                >
+                  {answers[q.id] || "Not answered"}
+                </span>
+              </p>
+              <p className="text-green-700">Correct: {q.answer}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <button
+            onClick={() => window.location.reload()}
+            className="px-5 py-2 bg-green-600 text-white rounded"
+          >
+            Try Again
+          </button>
+        </div>
       </div>
     );
   }
@@ -81,9 +124,12 @@ function MockTest() {
   return (
     <div className="p-8 max-w-xl mx-auto">
       <div className="flex justify-between mb-4">
-        <p>Question {current + 1}/{questions.length}</p>
+        <p>
+          Question {current + 1}/{questions.length}
+        </p>
         <p className="font-semibold">
-          ⏱ {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, "0")}
+          ⏱ {Math.floor(timeLeft / 60)}:
+          {String(timeLeft % 60).padStart(2, "0")}
         </p>
       </div>
 

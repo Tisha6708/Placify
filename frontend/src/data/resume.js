@@ -1,28 +1,28 @@
 const resumeData = {
   tips: [
-    "Keep resume to one page for freshers",
-    "Highlight projects with technologies used",
-    "Use action words like built, developed, implemented",
-    "Quantify results where possible",
-    "Tailor resume based on job role"
+    "Keep resume to one page",
+    "Mention technologies used in projects clearly",
+    "Add GitHub and portfolio links",
+    "Highlight internships and certifications",
+    "Use bullet points instead of paragraphs"
   ],
 
   mistakes: [
-    "Spelling and grammar errors",
-    "Using too many colors and fonts",
-    "Writing long paragraphs instead of bullet points",
-    "Including irrelevant personal details",
-    "Lying about skills"
+    "Grammar and spelling mistakes",
+    "Using fancy fonts and colors",
+    "Copy-paste project descriptions",
+    "Mentioning skills you cannot explain",
+    "Too much personal information"
   ],
 
   templates: [
     {
-      name: "Simple Fresher Template",
-      link: "https://www.overleaf.com/latex/templates/tagged/cv"
+      name: "Simple Fresher Resume Template",
+      link: "https://www.canva.com/resumes/templates/"
     },
     {
-      name: "Professional Template",
-      link: "https://www.canva.com/resumes/templates/"
+      name: "Overleaf LaTeX Resume Templates",
+      link: "https://www.overleaf.com/latex/templates/tagged/cv"
     }
   ]
 };

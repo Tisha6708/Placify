@@ -1,5 +1,6 @@
 import { useState } from "react";
 import problems from "../data/dsa.json";
+import PageWrapper from "../components/PageWrapper";
 
 function DSA() {
   const [topic, setTopic] = useState("All");
@@ -14,24 +15,32 @@ function DSA() {
   const markSolved = (id) => {
     if (!solved.includes(id)) {
       localStorage.setItem("dsaSolved", JSON.stringify([...solved, id]));
-      window.location.reload(); // simple refresh for now
+      window.location.reload();
     }
   };
 
   const topics = ["All", ...new Set(problems.map(p => p.topic))];
 
+  const diffColor = (d) => {
+    if (d === "Easy") return "bg-green-100 text-green-700";
+    if (d === "Medium") return "bg-yellow-100 text-yellow-700";
+    return "bg-red-100 text-red-700";
+  };
+
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-6">DSA Practice</h1>
+    <PageWrapper>
+      <h1 className="text-3xl font-bold mb-6">DSA Practice</h1>
 
       {/* Filters */}
-      <div className="flex gap-3 mb-6 flex-wrap">
+      <div className="flex gap-3 mb-8 flex-wrap">
         {topics.map(t => (
           <button
             key={t}
             onClick={() => setTopic(t)}
-            className={`px-4 py-2 rounded ${
-              topic === t ? "bg-blue-600 text-white" : "bg-gray-200"
+            className={`px-4 py-2 rounded-full text-sm transition ${
+              topic === t
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200 hover:bg-gray-300"
             }`}
           >
             {t}
@@ -39,39 +48,57 @@ function DSA() {
         ))}
       </div>
 
-      {/* Problems */}
-      <div className="space-y-4">
+      {/* Cards */}
+      <div className="grid grid-cols-1 gap-6">
         {filtered.map(p => (
           <div
             key={p.id}
-            className="p-4 border rounded flex justify-between items-center"
+            className="bg-white rounded-xl shadow hover:shadow-lg transition p-5 flex flex-col justify-between"
           >
             <div>
-              <h2 className="font-semibold">{p.title}</h2>
-              <p className="text-sm text-gray-500">
-                {p.topic} • {p.difficulty}
-              </p>
-              <p className="text-xs text-gray-400">
-                {p.companies.join(", ")}
-              </p>
+              <div className="flex justify-between items-start mb-2">
+                <h2 className="text-lg font-semibold">{p.title}</h2>
+                <span
+                  className={`text-xs px-2 py-1 rounded ${diffColor(
+                    p.difficulty
+                  )}`}
+                >
+                  {p.difficulty}
+                </span>
+              </div>
+
+              <p className="text-sm text-gray-500 mb-3">{p.topic}</p>
+
+              <div className="flex flex-wrap gap-2 mb-4">
+                {p.companies.map((c, i) => (
+                  <span
+                    key={i}
+                    className="text-xs bg-gray-100 px-2 py-1 rounded-full text-gray-600"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex justify-between items-center">
               <a
                 href={p.link}
                 target="_blank"
                 rel="noreferrer"
-                className="px-3 py-1 bg-indigo-600 text-white rounded text-sm"
+                className="text-sm font-medium text-blue-600 hover:underline"
               >
-                Solve
+                Solve →
               </a>
 
               {solved.includes(p.id) ? (
-                <span className="text-green-600 font-semibold">✔ Done</span>
+                <span className="text-green-600 font-semibold text-sm">
+                  ✔ Solved
+                </span>
               ) : (
                 <button
                   onClick={() => markSolved(p.id)}
-                  className="px-3 py-1 bg-green-600 text-white rounded text-sm"
+                  className="text-sm px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700"
                 >
                   Mark Solved
                 </button>
@@ -80,7 +107,7 @@ function DSA() {
           </div>
         ))}
       </div>
-    </div>
+    </PageWrapper>
   );
 }
 

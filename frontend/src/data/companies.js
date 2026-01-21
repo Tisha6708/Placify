@@ -1,46 +1,57 @@
 const companies = [
   {
     id: 1,
-    name: "TCS",
-    pattern: "Aptitude → Technical → HR",
-    topics: ["Aptitude", "Arrays", "OOPS", "SQL"],
+    name: "Accenture",
+    pattern: "Aptitude → Communication → Technical → HR",
+    topics: ["Aptitude", "Communication", "Basic Coding", "OOPS"],
     tips: [
-      "Strong aptitude is very important",
-      "Be clear with basic programming concepts",
-      "Prepare HR questions well"
+      "Communication round is very important",
+      "Revise basic coding and output-based questions",
+      "Prepare HR situational questions"
     ]
   },
   {
     id: 2,
-    name: "Infosys",
-    pattern: "Aptitude → Technical → HR",
-    topics: ["Aptitude", "Strings", "DBMS", "OOPS"],
+    name: "Deloitte",
+    pattern: "Online Test → Technical → Managerial → HR",
+    topics: ["Aptitude", "OOPS", "SQL", "Projects"],
     tips: [
-      "Focus on verbal and logical reasoning",
-      "Explain projects clearly",
-      "Revise DBMS basics"
+      "Strong focus on project explanation",
+      "Revise OOPS concepts clearly",
+      "Prepare scenario-based questions"
     ]
   },
   {
     id: 3,
-    name: "Amazon",
-    pattern: "Online Coding → Technical Rounds → HR",
-    topics: ["DSA", "OOPS", "System Design Basics"],
+    name: "Tech Mahindra",
+    pattern: "Aptitude → Technical → HR",
+    topics: ["Aptitude", "C Basics", "OOPS", "SQL"],
     tips: [
-      "Practice LeetCode medium problems",
-      "Be strong in problem-solving approach",
-      "Explain time and space complexity"
+      "Practice aptitude speed",
+      "Revise C programming basics",
+      "Prepare resume-based questions"
     ]
   },
   {
     id: 4,
-    name: "Accenture",
-    pattern: "Aptitude → Communication → Technical → HR",
-    topics: ["Aptitude", "Communication", "Basic Coding"],
+    name: "Wipro",
+    pattern: "Aptitude → Technical → HR",
+    topics: ["Aptitude", "Java/C Basics", "OOPS", "DBMS"],
     tips: [
-      "Good communication is important",
-      "Prepare situational HR questions",
-      "Revise basic coding patterns"
+      "Strong aptitude performance is key",
+      "Prepare syntax and output-based questions",
+      "Be confident in HR round"
+    ]
+  },
+  {
+    id: 5,
+    name: "Capgemini",
+    pattern: "Game-based Aptitude → Technical → HR",
+    topics: ["Logical Reasoning", "OOPS", "Projects"],
+    tips: [
+      "Logical games are important in aptitude round",
+      "Explain project architecture clearly",
+      "Prepare teamwork-related HR answers"
     ]
   }
 ];
